@@ -24,8 +24,8 @@ jobs:
     - uses: act10ns/slack@v2
       with:
           status: starting
-          channel: '#workflows'
-          message: Starting Docker Build and Push...
+          channel: 'gitaction-light-deployment-alert'
+          message: Started light Azure deployment...
       if: always()
 
     - name: Checkout
@@ -51,12 +51,11 @@ jobs:
 
       
     - name: Terraform Apply
-      if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
       run: terraform apply -auto-approve -input=false
 
     - uses: act10ns/slack@v2
       with:
           status: ${{ job.status }}
           steps: ${{ toJson(steps) }}
-          channel: '#workflows'
+          channel: 'gitaction-light-deployment-alert'
       if: always()
