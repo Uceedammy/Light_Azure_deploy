@@ -1,10 +1,10 @@
-terraform { 
-  cloud { 
-    
-    organization = "silverink" 
+terraform {
+  cloud {
 
-    workspaces { 
-      name = "light_Azure_deployment" 
-    } 
-  } 
+    organization = "silverink"
+
+    workspaces {
+      name = "light_Azure_deployment"
+    }
+  }
 }
