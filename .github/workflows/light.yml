@@ -20,6 +20,8 @@ jobs:
         shell: bash
 
     steps:
+    - name: Debug Environment Variables
+      run: printenv
     
     - uses: act10ns/slack@v2
       with:
